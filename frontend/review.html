@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairShare — Review Bill</title>
+    <link rel="stylesheet" href="css/review.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FairShare</h1>
+            <p class="tagline">Review and correct the extracted bill data</p>
+        </header>
+
+        <main>
+            <section class="bill-image-section">
+                <div class="bill-image-card">
+                    <h2>Uploaded Bill</h2>
+                    <img id="billImage" alt="Bill image">
+                </div>
+            </section>
+
+            <section class="restaurant-info-section">
+                <div class="info-card">
+                    <h2>Restaurant Information</h2>
+                    <div class="form-row">
+                        <label for="restaurantName">Restaurant Name</label>
+                        <input type="text" id="restaurantName" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="billDate">Date</label>
+                        <input type="date" id="billDate" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="billNumber">Bill Number</label>
+                        <input type="text" id="billNumber" class="form-input">
+                    </div>
+                </div>
+            </section>
+
+            <section class="items-section">
+                <div class="items-card">
+                    <h2>Extracted Items</h2>
+                    <div class="table-container">
+                        <table id="itemsTable">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price (₹)</th>
+                                    <th>Total (₹)</th>
+                                    <th>Confidence</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="itemsTableBody">
+                                <!-- Items will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-secondary" id="addItemBtn">+ Add Item</button>
+                </div>
+            </section>
+
+            <section class="charges-section">
+                <div class="charges-card">
+                    <h2>Bill Charges</h2>
+                    <div class="form-row">
+                        <label for="subtotal">Subtotal (₹)</label>
+                        <input type="number" id="subtotal" step="0.01" min="0" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="tax">GST / Tax (₹)</label>
+                        <input type="number" id="tax" step="0.01" min="0" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="serviceCharge">Service Charge (₹)</label>
+                        <input type="number" id="serviceCharge" step="0.01" min="0" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="discount">Discount (₹)</label>
+                        <input type="number" id="discount" step="0.01" min="0" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <label for="printedTotal">Printed Total (₹)</label>
+                        <input type="number" id="printedTotal" step="0.01" min="0" class="form-input">
+                    </div>
+                </div>
+            </section>
+
+            <section class="validation-section">
+                <div class="validation-card">
+                    <h2>Validation</h2>
+                    <div class="validation-row">
+                        <span>Calculated Subtotal:</span>
+                        <span id="calculatedSubtotal">₹0.00</span>
+                    </div>
+                    <div class="validation-row">
+                        <span>Printed Subtotal:</span>
+                        <span id="printedSubtotal">₹0.00</span>
+                    </div>
+                    <div class="validation-row">
+                        <span>Calculated Total:</span>
+                        <span id="calculatedTotal">₹0.00</span>
+                    </div>
+                    <div class="validation-row">
+                        <span>Printed Total:</span>
+                        <span id="validationPrintedTotal">₹0.00</span>
+                    </div>
+                    <div class="validation-message" id="validationMessage"></div>
+                </div>
+            </section>
+
+            <section class="members-section">
+                <div class="members-card">
+                    <h2>Members</h2>
+                    <div class="members-list" id="membersList">
+                        <!-- Members will be populated by JavaScript -->
+                    </div>
+                    <div class="add-member-row">
+                        <input type="text" id="newMemberName" placeholder="Enter member name" class="form-input">
+                        <button class="btn btn-secondary" id="addMemberBtn">+ Add Member</button>
+                    </div>
+                    <p class="info-text">Minimum: 2 members, Maximum: 7 members</p>
+                </div>
+            </section>
+
+            <section class="assignment-section">
+                <div class="assignment-card">
+                    <h2>Assign Items to Members</h2>
+                    <p class="info-text">Select who ate each item. If shared, the cost will be divided equally.</p>
+                    <div id="assignmentList">
+                        <!-- Assignments will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="calculateBtn">Calculate Fair Share</button>
+                    <button class="btn btn-secondary" id="backBtn">Back</button>
+                </div>
+            </section>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Calculating fair shares...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>FairShare — Fair bill splitting for everyone</p>
+        </footer>
+    </div>
+
+    <script src="js/review.js"></script>
+</body>
+</html>

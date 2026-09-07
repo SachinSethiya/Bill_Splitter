@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairShare — AI Restaurant Bill Splitter</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FairShare</h1>
+            <p class="tagline">Split restaurant bills fairly, without the arguments.</p>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <div class="upload-card">
+                    <h2>Upload Bill</h2>
+                    <p class="info-text">
+                        Your bill is extracted first. You review and correct it before we calculate anyone's share.
+                    </p>
+
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📷</div>
+                        <p class="upload-text">Drag and drop your bill image here</p>
+                        <p class="upload-subtext">or</p>
+                        <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.webp" hidden>
+                        <button class="btn btn-secondary" id="chooseFileBtn">Choose Image</button>
+                        <p class="supported-formats">Supported: JPG, JPEG, PNG, WEBP</p>
+                    </div>
+
+                    <div class="preview-section" id="previewSection" style="display: none;">
+                        <div class="preview-container">
+                            <img id="imagePreview" alt="Bill preview">
+                            <button class="btn-remove" id="removeImageBtn" title="Remove image">✕</button>
+                        </div>
+                        <p class="file-name" id="fileName"></p>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="extractBtn" disabled>
+                            Extract Bill
+                        </button>
+                        <button class="btn btn-demo" id="demoBtn">
+                            Try Demo Bill
+                        </button>
+                    </div>
+
+                    <div class="loading" id="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Extracting bill data...</p>
+                    </div>
+
+                    <div class="error-message" id="errorMessage" style="display: none;"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>FairShare — Fair bill splitting for everyone</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

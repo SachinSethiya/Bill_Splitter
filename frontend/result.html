@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairShare — Final Breakdown</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FairShare</h1>
+            <p class="tagline">Final Bill Breakdown</p>
+        </header>
+
+        <main>
+            <section class="bill-total-section">
+                <div class="bill-total-card">
+                    <h2>Bill Total</h2>
+                    <p class="total-amount" id="billTotal">₹0.00</p>
+                </div>
+            </section>
+
+            <section class="members-breakdown-section" id="membersBreakdown">
+                <!-- Member breakdown cards will be populated by JavaScript -->
+            </section>
+
+            <section class="verification-section">
+                <div class="verification-card">
+                    <h2>Total Verification</h2>
+                    <div class="verification-row">
+                        <span>Bill Total:</span>
+                        <span id="verificationBillTotal">₹0.00</span>
+                    </div>
+                    <div class="verification-row">
+                        <span>People's Shares:</span>
+                        <span id="verificationSharesTotal">₹0.00</span>
+                    </div>
+                    <div class="verification-row">
+                        <span>Difference:</span>
+                        <span id="verificationDifference">₹0.00</span>
+                    </div>
+                    <div class="verification-status" id="verificationStatus"></div>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="newBillBtn">New Bill</button>
+                    <button class="btn btn-secondary" id="backBtn">Back to Review</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>FairShare — Fair bill splitting for everyone</p>
+        </footer>
+    </div>
+
+    <script src="js/result.js"></script>
+</body>
+</html>
